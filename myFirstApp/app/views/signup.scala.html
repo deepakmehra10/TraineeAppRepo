@@ -1,0 +1,51 @@
+@(signupForm:Form[UsersData])(implicit flash:Flash,messages:Messages)
+@import b3.vertical.fieldConstructor
+
+@main("signup"){
+<style>
+.container{
+    background-image:url(@routes.Assets.versioned("images/login.jpg"));
+    }
+
+    form{
+    font-family: 'Arimo', sans-serif;
+    }
+    .header
+    {
+    font-family: 'Arimo', sans-serif;
+    background-color:#4E004E;
+    color:white;
+    font-size:30px;
+    padding:10px;
+    border-radius:2px;
+    }
+</style>
+<div>
+    @if(flash.get("error").isDefined){
+    <div class="alert alert-danger">
+        <strong>@flash.get("error")</strong>
+    </div>
+    }
+</div>
+<div class="container">
+    <div class="row header">
+        <div class="col-md-12">
+            SignUp
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-md-4 col-md-offset-4 " >
+        @b3.form(routes.UsersController.renderSignUp) {
+
+        @b3.text( signupForm("username"), '_label -> "User Name",'placeholder -> "Enter UserName" )
+        @b3.text( signupForm("email"), '_label -> "Email", 'placeholder -> "Enter Email Address" )
+        @b3.password( signupForm("password"), '_label -> "Password", 'placeholder -> "Enter password" )
+        @b3.password( signupForm("repassword"), '_label -> "Re-Password", 'placeholder -> "Re-enter password" )
+
+        @b3.submit('class -> "btn btn-primary"){ Sign Up Now }
+
+        }
+    </div>
+</div>
+</div>
+}
