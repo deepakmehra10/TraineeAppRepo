@@ -103,4 +103,14 @@ class UsersController @Inject()(user:UserRepo) extends Controller {
       Ok(views.html.homepage())
   }
 
+
+  def logout=Action{
+    implicit request=>
+    Redirect(routes.UsersController.renderLogin()).withNewSession
+
+  }
+
+
+
+
 }
