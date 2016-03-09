@@ -2,15 +2,20 @@ package controllers
 
 import javax.inject.Inject
 
+import connection.DbComponent
+import models.User
 import play.api.data._
 import play.api.data.Forms._
 import play.api.mvc.Action
 import play.api.mvc._
+import repository.UserRepoApi
+import scala.concurrent.duration._
+import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future._
 import play.api.i18n.Messages.Implicits._
 import play.api.Play.current
 
-import scala.concurrent.Future
+import scala.concurrent.{Await, Future}
 
 /**
   * Created by knoldus on 26/2/16.
@@ -18,7 +23,8 @@ import scala.concurrent.Future
 
 case class UsersData(username: String,email:String,password:String,repassword:String)
 case class LoginData(username:String,password:String)
-class UsersController extends Controller{
+
+class UsersController extends Controller with UserRepoApi{ this: DbComponent =>
 
   val signupForm = Form(
     mapping(
@@ -32,13 +38,31 @@ class UsersController extends Controller{
 
   val loginForm = Form(
     mapping(
-      "username" -> text,
-      "password"->text
+      "username" -> nonEmptyText,
+      "password"->nonEmptyText
 
-    )(LoginData.apply)(LoginData.unapply)
-
+    )(LoginData.apply)(LoginData.unapply).verifying("Invalid User", res=> res match{
+      case LoginData(u,p) => checkValidation(u,p)
+    })
   )
 
+  def checkValidation(username:String,password:String): Boolean={
+    val result:Future[List[User]]=validateUser(username,password)
+    val finalResult=result.map(x => if(x.length==1)
+    true
+    else false)
+
+    Await.result(finalResult,3 seconds)
+  }
+
+
+  def authenticate = Action { implicit request =>
+    loginForm.bindFromRequest.fold(
+      formWithErrors => BadRequest(views.html.loginusers(formWithErrors)),
+      loginData => Ok("success")
+
+    )
+  }
 
 
   def renderSignUp() = Action {

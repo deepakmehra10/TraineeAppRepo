@@ -35,7 +35,12 @@ trait UserRepoApi extends UserTable {
     userTableQuery += user
   }
 
-  def validate(user: User): Future[Boolean] = {
+  def validateUser(name:String,password:String)={
+        val result=userTableQuery.filter(_.name===name).filter(_.password===password).to[List].result
+    db.run{   result   }
+  }
+
+ /* def validate(user: User): Future[Boolean] = {
     val list: Future[List[User]] = db.run {
       userTableQuery.to[List].result
     }
@@ -44,6 +49,7 @@ trait UserRepoApi extends UserTable {
     }
     res
   }
+  */
 
 
 

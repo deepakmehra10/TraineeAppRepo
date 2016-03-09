@@ -6,27 +6,25 @@
 GET     /                           controllers.Application.index
 
 GET     /webjars/*file                    controllers.WebJarAssets.at(file)
-GET     /greet/:name                controllers.MyController.greet(name)
 
-GET     /greet1/:firstname&:age               controllers.MyControllerParam.twoParam(firstname,age:Int)
+
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
-GET   /login                           controllers.Authentication.login()
 
-POST /auth                      controllers.Authentication.authenticated()
 
-GET /getUsers                    controllers.UserController.index()
+
+
 
 GET     /webjars/*file                    controllers.WebJarAssets.at(file)
 
-GET   /english/sayhello                              controllers.EnglishController.englishHello
-
-GET   /hindi/sayhello                              controllers.HindiController.hindiHello
 
 GET   /signup                           controllers.UsersController.renderSignUp()
 
 GET   /users/login                           controllers.UsersController.renderLogin()
+
+POST  /users/authenticate                    controllers.UsersController.authenticate
 
 GET   /homepage                               controllers.UsersController.renderHomepage
 
