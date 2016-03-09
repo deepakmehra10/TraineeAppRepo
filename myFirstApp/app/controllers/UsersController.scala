@@ -8,7 +8,7 @@ import play.api.data._
 import play.api.data.Forms._
 import play.api.mvc.Action
 import play.api.mvc._
-import repository.UserRepoApi
+import repository.{UserRepo, UserRepoApi}
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future._
@@ -24,7 +24,7 @@ import scala.concurrent.{Await, Future}
 case class UsersData(username: String,email:String,password:String,repassword:String)
 case class LoginData(username:String,password:String)
 
-class UsersController extends Controller with UserRepoApi{ this: DbComponent =>
+class UsersController @Inject()(user:UserRepoApi) extends Controller {
 
   val signupForm = Form(
     mapping(
@@ -47,7 +47,10 @@ class UsersController extends Controller with UserRepoApi{ this: DbComponent =>
   )
 
   def checkValidation(username:String,password:String): Boolean={
-    val result:Future[List[User]]=validateUser(username,password)
+
+
+    val result:Future[List[User]]=user.validateUser(username,password)
+    //println(result);
     val finalResult=result.map(x => if(x.length==1)
     true
     else false)

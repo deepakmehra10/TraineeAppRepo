@@ -1,4 +1,7 @@
 package repository
+
+import com.google.inject.ImplementedBy
+
 import scala.concurrent.ExecutionContext.Implicits.global
 import connection.{MyDBComponent, DbComponent}
 import models.User
@@ -25,7 +28,7 @@ trait UserTable { this: DbComponent =>
   }
 }
 
-
+@ImplementedBy(classOf[UserRepo])
 trait UserRepoApi extends UserTable {
   this: DbComponent =>
 
