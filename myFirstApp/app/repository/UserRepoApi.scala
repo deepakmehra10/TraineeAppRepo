@@ -1,35 +1,40 @@
 package repository
 
-import com.google.inject.ImplementedBy
 
-import scala.concurrent.ExecutionContext.Implicits.global
+import javax.inject.{Inject,Singleton}
+
+import slick.driver.JdbcProfile
+import play.api.db.slick.DatabaseConfigProvider
+import play.api.db.slick.HasDatabaseConfigProvider
+
 import connection.{MyDBComponent, DbComponent}
 import models.User
-import scala.concurrent.Future
+
 
 /**
   * Created by knodus on 8/3/16.
   */
 
-trait UserTable { this: DbComponent =>
+trait UserTable { self: HasDatabaseConfigProvider[JdbcProfile] =>
 
   import driver.api._
 
   val userTableQuery = TableQuery[UserTable]
 
-  class UserTable(tag: Tag) extends Table[User](tag, "trainee_db") {
+  class UserTable(tag: Tag) extends Table[User](tag, "traineeuser") {
     val name = column[String]("username", O.SqlType("VARCHAR(200)"))
     val password = column[String]("userpassword", O.SqlType("PASSWORD"))
     val role = column[Boolean]("userrole", O.SqlType("BOOLEAN"))
     val id: Rep[Int] = column[Int]("userid", O.AutoInc, O.PrimaryKey)
 
     def * = (name, password, role,id) <>(User.tupled, User.unapply)
-    val db=Database.forConfig("mydb")
+
   }
 }
 
-@ImplementedBy(classOf[UserRepo])
-trait UserRepoApi extends UserTable {
+@Singleton()
+class UserRepo @Inject() (protected val dbConfigProvider: DatabaseConfigProvider) extends UserTable with
+  HasDatabaseConfigProvider[JdbcProfile] {
   this: DbComponent =>
 
   import driver.api._
@@ -43,22 +48,10 @@ trait UserRepoApi extends UserTable {
     db.run{   result   }
   }
 
- /* def validate(user: User): Future[Boolean] = {
-    val list: Future[List[User]] = db.run {
-      userTableQuery.to[List].result
-    }
-    val res = list.map { x => if (x.contains(user)) true
-    else false
-    }
-    res
-  }
-  */
-
-
 
 }
 
-class UserRepo extends UserRepoApi with MyDBComponent
+//class UserRepo extends UserRepoApi with MyDBComponent
 /*
 object UserRepo extends UserRepoApi { this: DbComponent =>
   createTable
