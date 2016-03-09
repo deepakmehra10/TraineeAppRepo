@@ -28,4 +28,5 @@ POST  /users/authenticate                    controllers.UsersController.authent
 
 GET   /homepage                               controllers.UsersController.renderHomepage
 
-GET   /admin/homepage                               controllers.UsersController.renderadminHomepage
+POST  /user/homepage                                 controllers.UsersController.renderuserHomepage
+

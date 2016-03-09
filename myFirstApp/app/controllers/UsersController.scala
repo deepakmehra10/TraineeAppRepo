@@ -2,7 +2,6 @@ package controllers
 
 import javax.inject.Inject
 
-import connection.DbComponent
 import models.User
 import play.api.data._
 import play.api.data.Forms._
@@ -41,31 +40,45 @@ class UsersController @Inject()(user:UserRepo) extends Controller {
       "username" -> nonEmptyText,
       "password"->nonEmptyText
 
-    )(LoginData.apply)(LoginData.unapply).verifying("Invalid User", res=> res match{
-      case LoginData(u,p) => checkValidation(u,p)
-    })
+    )(LoginData.apply)(LoginData.unapply)
   )
 
-  def checkValidation(username:String,password:String): Boolean={
-
-
+  def checkValidation(username:String,password:String): Future[Boolean]={
     val result:Future[List[User]]=user.validateUser(username,password)
-    //println(result);
-    val finalResult=result.map(x => if(x.length==1)
-    true
-    else false)
+    result.map{x => if(x.length==1) true  else false}
 
-    Await.result(finalResult,5 seconds)
   }
 
-
-  def authenticate = Action { implicit request =>
+  def authenticate = Action.async { implicit request =>
     loginForm.bindFromRequest.fold(
-      formWithErrors => BadRequest(views.html.loginusers(formWithErrors)),
-      loginData => Ok("success")
+      formWithErrors => Future{Redirect(routes.UsersController.renderLogin()).flashing("error"->" Enter valid Details")},
+      loginData => {
 
+        val result=checkValidation(loginData.username,loginData.password)
+        result.map{ x => if(x == true)
+         Redirect(routes.UsersController.renderHomepage).withSession("connected" -> loginData.username)
+        else
+
+          Redirect(routes.UsersController.renderLogin()).flashing("error" -> " Enter valid Details")
+
+        }
+      }
     )
   }
+
+  def renderHomepage=Action { implicit request=>
+    //Ok("success")
+    request.session.get("connected").map { user =>
+      if(user=="admin")
+        Ok(views.html.adminhomepage())
+      else
+        Ok(views.html.homepage())
+       }.getOrElse{
+       Unauthorized("Oops, you are not connected")
+
+       }
+
+    }
 
 
   def renderSignUp() = Action {
@@ -78,14 +91,16 @@ class UsersController @Inject()(user:UserRepo) extends Controller {
       Ok(views.html.loginusers(loginForm))
   }
 
-  def renderHomepage= Action {
-    implicit request=>
-      Ok(views.html.homepage())
-  }
+
 
   def renderadminHomepage= Action {
     implicit request=>
       Ok(views.html.adminhomepage())
+  }
+
+  def renderuserHomepage= Action {
+    implicit request=>
+      Ok(views.html.homepage())
   }
 
 }

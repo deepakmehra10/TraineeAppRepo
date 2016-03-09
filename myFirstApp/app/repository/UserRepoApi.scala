@@ -6,9 +6,11 @@ import javax.inject.{Inject,Singleton}
 import slick.driver.JdbcProfile
 import play.api.db.slick.DatabaseConfigProvider
 import play.api.db.slick.HasDatabaseConfigProvider
-
+import scala.concurrent.ExecutionContext.Implicits.global
 import connection.{MyDBComponent, DbComponent}
 import models.User
+
+import scala.concurrent.Future
 
 
 /**
@@ -48,6 +50,11 @@ class UserRepo @Inject() (protected val dbConfigProvider: DatabaseConfigProvider
     db.run{   result   }
   }
 
+  def getUserType(name:String):Future[Boolean]={
+    val result=userTableQuery.filter(_.name===name).to[List].result
+    val finalResult= db.run{ result }
+    finalResult.map(x => if( x(0).role == true) true else false)
+  }
 
 }
 
