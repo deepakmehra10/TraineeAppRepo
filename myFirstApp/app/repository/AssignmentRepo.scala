@@ -22,7 +22,7 @@ trait AssignmentTable { self: HasDatabaseConfigProvider[JdbcProfile] =>
 
   val assignmentTableQuery = TableQuery[AssignmentTable]
 
-  class AssignmentTable(tag: Tag) extends Table[Awards](tag, "assignment") {
+  class AssignmentTable(tag: Tag) extends Table[Assignment](tag,"assignment") {
     val sno = column[Int]("sno")
     val studname = column[String]("studname", O.SqlType("VARCHAR(200)"))
     val name = column[String]("name", O.SqlType("VARCHAR(200)"))
@@ -42,18 +42,18 @@ class AssignmentRepo @Inject() (protected val dbConfigProvider: DatabaseConfigPr
 
   import driver.api._
 
-  def getAllAssignments():Future[List[Assignment]]={
+  def getAllAssignment:Future[List[Assignment]]={
     val statement=assignmentTableQuery.to[List].result
     db.run(statement)
   }
 
-  def getUserAssignments(student:String):Future[List[Assignment]]={
+  def getUserAssignment(student:String):Future[List[Assignment]]={
     val statement=assignmentTableQuery.filter(_.name===student).to[List].result
     db.run(statement)
   }
 
-  def addAssignments(assignment:Assignment)={
-    val statement=awardTableQuery += assignment
+  def addAssignment(assignment:Assignment)={
+    val statement=assignmentTableQuery += assignment
     db.run(statement)
   }
 

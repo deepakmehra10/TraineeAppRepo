@@ -1,0 +1,29 @@
+@(listOfLanguage:List[repository.Language])
+
+<h1>List of Languages Known </h1>
+<p>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>S.no.</th>
+        <th>Student Name</th>
+        <th>Language Name</th>
+        <th>Fluency</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    @for(items <- listOfLanguage ){
+
+    <tr>
+        <td>@items.sno</td>
+        <td>@items.studname</td>
+        <td>@items.langname</td>
+        <td>@items.fluency</td>
+    </tr>
+
+
+    }
+    </tbody>
+</table>
+</p>

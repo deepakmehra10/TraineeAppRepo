@@ -7,7 +7,7 @@ import play.api.data._
 import play.api.data.Forms._
 import play.api.mvc.Action
 import play.api.mvc._
-import repository.{AwardRepo, UserRepo}
+import repository._
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future._
@@ -23,7 +23,7 @@ import scala.concurrent.{Await, Future}
 case class UsersData(username: String,email:String,password:String,repassword:String)
 case class LoginData(username:String,password:String)
 
-class UsersController @Inject()(user:UserRepo,award:AwardRepo) extends Controller {
+class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageRepo,assignment:AssignmentRepo,programming:ProgrammingLanguageRepo) extends Controller {
 
   val signupForm = Form(
     mapping(
@@ -117,32 +117,32 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo) extends Controlle
   }
 
  def getLanguages=Action.async{ implicit request =>
-    award.getAllLanguages.map{ data =>
+    language.getAllLanguage.map{ data =>
       Ok(views.html.adminDashboard.languageTable(data))
     }
 
   }
 
   def getAssignment=Action.async{ implicit request =>
-    award.getAllAssignment.map{ data =>
+    assignment.getAllAssignment.map{ data =>
       Ok(views.html.adminDashboard.assignmentTable(data))
     }
 
   }
 
-  def getprogramming=Action.async{ implicit request =>
-    award.getAllProgramming.map{ data =>
-      Ok(views.html.adminDashboard.programmingTable(data))
+  def getProgramming=Action.async{ implicit request =>
+    programming.getAllProgLanguage.map{ data =>
+      Ok(views.html.adminDashboard.progLanguageTable(data))
     }
   }
-
+/*
   def getIntern=Action.async{ implicit request =>
     award.getAllIntern.map{ data =>
       Ok(views.html.adminDashboard.internTable(data))
     }
 
   }
-
+*/
 
 
 }

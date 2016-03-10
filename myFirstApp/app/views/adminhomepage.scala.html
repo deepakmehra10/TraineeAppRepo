@@ -13,10 +13,10 @@
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
 
-        <li><a data-toggle="tab" href="#menu1">Awards</a></li>
-        <li><a data-toggle="tab" href="#menu2">Languages Known</a></li>
-        <li><a data-toggle="tab" href="#menu3">Assignment</a></li>
-        <li><a data-toggle="tab" href="#menu4">Programming Language</a></li>
+        <li><a data-toggle="tab" href="#menu1" id="awards">Awards</a></li>
+        <li><a data-toggle="tab" href="#menu2" id="language">Languages Known</a></li>
+        <li><a data-toggle="tab" href="#menu3" id="assignment">Assignment</a></li>
+        <li><a data-toggle="tab" href="#menu4" id="programming">Programming Language</a></li>
         <li><a data-toggle="tab" href="#menu5">Intern Details</a></li>
     </ul>
 
@@ -29,33 +29,6 @@
             <h3>Awards</h3>
             <p>
 
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Name</th>
-                    <th>Details</th>
-                    <th>Year</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>johnexample.com</td>
-                </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>maryexample.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>julyexample.com</td>
-                </tr>
-                </tbody>
-            </table>
 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add Record</button>
 
@@ -143,34 +116,6 @@
             <p>
 
 
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Language-Name</th>
-                    <th>Fluency</th>
-
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>johnexample.com</td>
-                </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>maryexample.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>julyexample.com</td>
-                </tr>
-                </tbody>
-            </table>
-
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Add Record</button>
 
             <div class="modal fade" id="myModal1" role="dialog">
@@ -228,33 +173,6 @@
             <p>
 
 
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Marks</th>
-                    <th>Remarks</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>johnexample.com</td>
-                </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>maryexample.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>julyexample.com</td>
-                </tr>
-                </tbody>
-            </table>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Add Record</button>
 
             <div class="modal fade" id="myModal2" role="dialog">
@@ -316,34 +234,6 @@
             <h3>Programming Language</h3>
             <p>
 
-
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>SNo.</th>
-                    <th>Language Name</th>
-                    <th>Efficiency</th>
-
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>johnexample.com</td>
-                </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>maryexample.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>julyexample.com</td>
-                </tr>
-                </tbody>
-            </table>
 
 
 
@@ -496,4 +386,64 @@
     </div>
 
 </div>
+
+
+
+
+
+<script>
+    $(document).ready(function(){
+    $('#awards').click(function(){
+
+    $.get("/users/getawards",function(data,status){
+    $('#menu1').html(data);
+    });
+    });
+
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+    $('#language').click(function(){
+
+    $.get("/users/getlanguage",function(data,status){
+    $('#menu2').html(data);
+    });
+    });
+
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+    $('#assignment').click(function(){
+
+    $.get("/users/getassignment",function(data,status){
+    $('#menu3').html(data);
+    });
+    });
+
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+    $('#programming').click(function(){
+
+    $.get("/users/getprogramming",function(data,status){
+    $('#menu4').html(data);
+    });
+    });
+
+    });
+</script>
+
+
+
+
+
+
+
+
 }

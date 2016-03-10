@@ -12,7 +12,7 @@ import scala.concurrent.Future
 /**
   * Created by knodus on 9/3/16.
   */
-case class Language(sno:Int,name:String,fluency:String)
+case class Language(sno:Int,studname:String,langname:String,fluency:String)
 
 trait LanguageTable { self: HasDatabaseConfigProvider[JdbcProfile] =>
 
@@ -38,7 +38,7 @@ class LanguageRepo @Inject() (protected val dbConfigProvider: DatabaseConfigProv
 
   import driver.api._
 
-  def getAllLanguage():Future[List[Language]]={
+  def getAllLanguage:Future[List[Language]]={
     val statement=languageTableQuery.to[List].result
     db.run(statement)
   }

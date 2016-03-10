@@ -34,5 +34,8 @@ GET   /users/login                                    controllers.UsersControlle
 
 GET   /users/getawards                                   controllers.UsersController.getAwards
 
+GET   /users/getlanguage                                   controllers.UsersController.getLanguages
 
+GET    /users/getassignment                                 controllers.UsersController.getAssignment
 
+GET     /users/getprogramming                               controllers.UsersController.getProgramming

@@ -1,0 +1,32 @@
+@(listOfAssignment:List[repository.Assignment])
+
+<h1>List of Assignment </h1>
+<p>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>S.no.</th>
+        <th>Student Name</th>
+        <th>Assignment Name</th>
+        <th>Date</th>
+        <th>Marks</th>
+        <th>Remarks</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    @for(items <- listOfAssignment ){
+    <tr>
+        <td>@items.sno</td>
+        <td>@items.studname</td>
+        <td>@items.name</td>
+        <td>@items.date</td>
+        <td>@items.marks</td>
+        <td>@items.remarks</td>
+    </tr>
+
+
+    }
+    </tbody>
+</table>
+</p>
