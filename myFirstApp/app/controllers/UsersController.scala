@@ -74,11 +74,9 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
         Ok(views.html.homepage())
        }.getOrElse{
        Unauthorized("Oops, you are not connected")
-
        }
 
     }
-
 
   def renderSignUp() = Action {
     implicit request=>
@@ -91,12 +89,12 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
   }
 
 
-
+/*
   def renderadminHomepage= Action {
     implicit request=>
       Ok(views.html.adminhomepage())
   }
-
+*/
   def renderuserHomepage= Action {
     implicit request=>
       Ok(views.html.homepage())
@@ -144,5 +142,37 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
   }
 */
 
+  def getUserAwards=Action.async{ implicit request =>
+    val user= request.session.get("connected")
+    val username= user.get
+       award.getUserAwards(username).map { data =>
+         Ok(views.html.adminDashboard.awardTable(data))
+       }
+  }
+
+  def getUserAssignment=Action.async{ implicit request =>
+    val user= request.session.get("connected")
+    val username= user.get
+    assignment.getUserAssignment(username).map { data =>
+      Ok(views.html.adminDashboard.assignmentTable(data))
+    }
+  }
+
+  def getUserLanguage=Action.async{ implicit request =>
+    val user= request.session.get("connected")
+    val username= user.get
+    language.getUserLanguage(username).map { data =>
+      Ok(views.html.adminDashboard.languageTable(data))
+    }
+  }
+
+  def getUserProgramming=Action.async{ implicit request =>
+    val user= request.session.get("connected")
+    val username= user.get
+    programming.getUserProgLanguage(username).map { data =>
+      Ok(views.html.adminDashboard.progLanguageTable(data))
+    }
+
+  }
 
 }

@@ -18,14 +18,11 @@ class UsersControllerSpec extends Specification {
 
     "render the index page" in new WithApplication{
       val home = route(FakeRequest(GET, "/")).get
-
       status(home) must equalTo(303)
-
     }
 
     "render the login page" in new WithApplication{
       val home = route(FakeRequest(GET, "/users/login")).get
-
       status(home) must equalTo(OK)
     }
 
@@ -37,6 +34,48 @@ class UsersControllerSpec extends Specification {
     "render the authenticate login with Correct Data" in new WithApplication{
       val home = route(FakeRequest(POST, "/users/authenticate").withFormUrlEncodedBody("username"->"sangeeta","password"->"123")).get
       status(home) must equalTo(303)
+    }
+
+    "render the authenticate login with Unauthorised Access" in new WithApplication{
+      val home = route(FakeRequest(POST, "/users/authenticate").withFormUrlEncodedBody("username"->"abc","password"->"xyz")).get
+      status(home) must equalTo(303)
+    }
+
+    "render Home page with admin: Unauthorised Access" in new WithApplication{
+      val home = route(FakeRequest(GET, "/homepage").withFormUrlEncodedBody("username"->"admin","password"->"admin")).get
+      status(home) must equalTo(401)
+    }
+
+    "render Home page with trainee account: Unauthorised Access" in new WithApplication{
+      val home = route(FakeRequest(GET, "/homepage").withFormUrlEncodedBody("username"->"sangeeta","password"->"123")).get
+      status(home) must equalTo(401)
+    }
+
+
+
+    "logout the user" in new WithApplication{
+      val home = route(FakeRequest(GET, "/users/login")).get
+      status(home) must equalTo(303)
+    }
+
+    "get awards of user" in new WithApplication{
+      val home = route(FakeRequest(GET, "/users/getawards")).get
+      status(home) must equalTo(OK)
+    }
+
+    "get languages of user" in new WithApplication{
+      val home = route(FakeRequest(GET, "/users/getlanguage")).get
+      status(home) must equalTo(OK)
+    }
+
+    "get assignments of user" in new WithApplication{
+      val home = route(FakeRequest(GET, "/users/getassignment")).get
+      status(home) must equalTo(OK)
+    }
+
+    "get programming language of user" in new WithApplication{
+      val home = route(FakeRequest(GET, "/users/getprogramming")).get
+      status(home) must equalTo(OK)
     }
 
   }

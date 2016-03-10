@@ -26,12 +26,7 @@ class UserRepoSpec extends Specification {
       val result = Await.result(userRepo.insert(User("akshay","123",true,2)), 5 seconds)
       assert(result === 1)
     }
-    /*
-        "get all records" in new WithApplication {
-          val result = Await.result(userRepo.getAll(), 5 seconds)
-          assert(result.length === 1)
-        }
-    */
+
   }
 
 }

@@ -39,3 +39,11 @@ GET   /users/getlanguage                                   controllers.UsersCont
 GET    /users/getassignment                                 controllers.UsersController.getAssignment
 
 GET     /users/getprogramming                               controllers.UsersController.getProgramming
+
+GET         /users/getuserawards                            controllers.UsersController.getUserAwards
+
+GET       /users/getuserassignment                          controllers.UsersController.getUserAssignment
+
+GET       /users/getuserlanguage                           controllers.UsersController.getUserLanguage
+
+GET      /users/getuserprogramming                         controllers.UsersController.getUserProgramming

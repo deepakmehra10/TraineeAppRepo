@@ -48,7 +48,7 @@ class AssignmentRepo @Inject() (protected val dbConfigProvider: DatabaseConfigPr
   }
 
   def getUserAssignment(student:String):Future[List[Assignment]]={
-    val statement=assignmentTableQuery.filter(_.name===student).to[List].result
+    val statement=assignmentTableQuery.filter(_.studname===student).to[List].result
     db.run(statement)
   }
 

@@ -16,9 +16,9 @@
         <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
 
         <li><a data-toggle="tab" href="#menu1" id="awards">Awards</a></li>
-        <li><a data-toggle="tab" href="#menu2">Languages Known</a></li>
-        <li><a data-toggle="tab" href="#menu3">Assignment</a></li>
-        <li><a data-toggle="tab" href="#menu4">Programming Language</a></li>
+        <li><a data-toggle="tab" href="#menu2" id="language">Languages Known</a></li>
+        <li><a data-toggle="tab" href="#menu3" id="assignment">Assignment</a></li>
+        <li><a data-toggle="tab" href="#menu4" id="programming">Programming Language</a></li>
     </ul>
 
     <div class="tab-content">
@@ -51,9 +51,45 @@
 <script>
     $(document).ready(function(){
     $('#awards').click(function(){
-alert("checked");
-    $.get("/users/getawards",function(data,status){
+
+    $.get("/users/getuserawards",function(data,status){
     $('#menu1').html(data);
+    });
+    });
+
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+    $('#assignment').click(function(){
+
+    $.get("/users/getuserassignment",function(data,status){
+    $('#menu2').html(data);
+    });
+    });
+
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+    $('#language').click(function(){
+
+    $.get("/users/getuserlanguage",function(data,status){
+    $('#menu3').html(data);
+    });
+    });
+
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+    $('#programming').click(function(){
+
+    $.get("/users/getuserprogramming",function(data,status){
+    $('#menu4').html(data);
     });
     });
 
