@@ -7,7 +7,7 @@ import play.api.data._
 import play.api.data.Forms._
 import play.api.mvc.Action
 import play.api.mvc._
-import repository.{UserRepo}
+import repository.{AwardRepo, UserRepo}
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future._
@@ -23,7 +23,7 @@ import scala.concurrent.{Await, Future}
 case class UsersData(username: String,email:String,password:String,repassword:String)
 case class LoginData(username:String,password:String)
 
-class UsersController @Inject()(user:UserRepo) extends Controller {
+class UsersController @Inject()(user:UserRepo,award:AwardRepo) extends Controller {
 
   val signupForm = Form(
     mapping(
@@ -110,7 +110,10 @@ class UsersController @Inject()(user:UserRepo) extends Controller {
 
   }
 
+ def getAwards=Action{
+    Ok("success")
 
+  }
 
 
 }

@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="960ff02d-4a88-4bd3-9049-04835ab81e25" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myFirstApp/app/repository/AwardsRepo.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myFirstApp/app/repository/LanguageRepo.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myFirstApp/app/controllers/UsersController.scala" afterPath="$PROJECT_DIR$/myFirstApp/app/controllers/UsersController.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myFirstApp/app/views/adminhomepage.scala.html" afterPath="$PROJECT_DIR$/myFirstApp/app/views/adminhomepage.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myFirstApp/app/views/homepage.scala.html" afterPath="$PROJECT_DIR$/myFirstApp/app/views/homepage.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myFirstApp/app/views/main.scala.html" afterPath="$PROJECT_DIR$/myFirstApp/app/views/main.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myFirstApp/conf/routes" afterPath="$PROJECT_DIR$/myFirstApp/conf/routes" />
     </list>
     <ignored path="TraineeAppRepo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,24 +41,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="User.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myFirstApp/app/models/User.scala">
+      <file leaf-file-name="UsersController.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myFirstApp/app/controllers/UsersController.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+              <folding>
+                <element signature="e#21#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homepage.scala.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/homepage.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5496183">
+              <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersController.scala" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/myFirstApp/app/controllers/UsersController.scala">
+      <file leaf-file-name="adminhomepage.scala.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/adminhomepage.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6571429">
-              <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-              <folding>
-                <element signature="e#21#47#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-8.0">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/myFirstApp/app/repository/AwardsRepo.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="e#20#59#0" expanded="true" />
               </folding>
@@ -91,8 +98,18 @@
       <file leaf-file-name="main.scala.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/main.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.0">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+            <state vertical-scroll-proportion="-8.555555">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApplicationSpec.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myFirstApp/test/ApplicationSpec.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -114,7 +131,7 @@
         <entry file="file://$PROJECT_DIR$/myFirstApp/conf/routes">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <caret line="34" column="22" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -158,10 +175,11 @@
         <option value="$PROJECT_DIR$/myFirstApp/app/repository/UserRepoApi.scala" />
         <option value="$PROJECT_DIR$/myFirstApp/app/views/adminhomepage.scala.html" />
         <option value="$PROJECT_DIR$/myFirstApp/app/repository/LanguageRepo.scala" />
-        <option value="$PROJECT_DIR$/myFirstApp/conf/routes" />
-        <option value="$PROJECT_DIR$/myFirstApp/app/views/main.scala.html" />
         <option value="$PROJECT_DIR$/myFirstApp/app/repository/AwardsRepo.scala" />
+        <option value="$PROJECT_DIR$/myFirstApp/app/views/main.scala.html" />
         <option value="$PROJECT_DIR$/myFirstApp/app/controllers/UsersController.scala" />
+        <option value="$PROJECT_DIR$/myFirstApp/conf/routes" />
+        <option value="$PROJECT_DIR$/myFirstApp/app/views/homepage.scala.html" />
       </list>
     </option>
   </component>
@@ -332,32 +350,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="repository" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TraineeAppRepo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TraineeAppRepo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myFirstApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LanguageRepo.scala" />
-              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1196,14 +1188,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/homepage.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myFirstApp/activator">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1225,16 +1209,6 @@
         <state vertical-scroll-proportion="-6.9310346">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/test/ApplicationSpec.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#27#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1270,14 +1244,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/adminhomepage.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myFirstApp/app/repository/UserRepoApi.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1285,30 +1251,6 @@
           <folding>
             <element signature="e#21#59#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/test/UsersControllerSpec.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/conf/routes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/main.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.0">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1322,23 +1264,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/main.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.555555">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myFirstApp/test/ApplicationSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/myFirstApp/app/repository/AwardsRepo.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#20#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/myFirstApp/test/UsersControllerSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/myFirstApp/app/controllers/UsersController.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6571429">
-          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
           <folding>
             <element signature="e#21#47#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myFirstApp/conf/routes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="22" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/adminhomepage.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/homepage.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5496183">
+          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>

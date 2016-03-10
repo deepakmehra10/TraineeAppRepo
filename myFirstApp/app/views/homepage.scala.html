@@ -6,7 +6,7 @@
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
 
-        <li><a data-toggle="tab" href="#menu1">Awards</a></li>
+        <li><a data-toggle="tab" href="#menu1" id="awards">Awards</a></li>
         <li><a data-toggle="tab" href="#menu2">Languages Known</a></li>
         <li><a data-toggle="tab" href="#menu3">Assignment</a></li>
         <li><a data-toggle="tab" href="#menu4">Programming Language</a></li>
@@ -34,5 +34,20 @@
             <p>Programming</p>
         </div>
     </div>
+
+<button id="hi">hi</button>
 </div>
+
+<script>
+    $(document).ready(function(){
+    $('#awards').click(function(){
+alert("checked");
+    $.get("localhost:9000/users/getawards",function(data,status){
+    alert(data+""+status);
+    });
+    });
+
+    });
+</script>
+
 }
