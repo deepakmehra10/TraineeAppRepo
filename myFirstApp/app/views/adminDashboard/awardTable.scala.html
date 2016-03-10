@@ -1,0 +1,28 @@
+@(listOfAwards:List[repository.Awards])
+
+<h1>List of Awards </h1>
+<p>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>S.no.</th>
+        <th>Student Name</th>
+        <th>Details</th>
+        <th>Year</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    @for(items <- listOfAwards ){
+<tr>
+    <td>@items.sno</td>
+    <td>@items.name</td>
+    <td>@items.details</td>
+    <td>@items.year</td>
+</tr>
+
+
+    }
+    </tbody>
+</table>
+</p>

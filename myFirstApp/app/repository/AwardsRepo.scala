@@ -45,6 +45,11 @@ class AwardRepo @Inject() (protected val dbConfigProvider: DatabaseConfigProvide
     db.run(statement)
   }
 
+  def getUserAwards(student:String):Future[List[Awards]]={
+    val statement=awardTableQuery.filter(_.name===student).to[List].result
+    db.run(statement)
+  }
+
   def addAwards(award:Awards)={
     val statement=awardTableQuery += award
     db.run(statement)

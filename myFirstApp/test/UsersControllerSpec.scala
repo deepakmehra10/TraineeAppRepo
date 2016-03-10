@@ -29,8 +29,13 @@ class UsersControllerSpec extends Specification {
       status(home) must equalTo(OK)
     }
 
-    "render the authenticate login" in new WithApplication{
+    "render the authenticate login with Bad Data" in new WithApplication{
       val home = route(FakeRequest(POST, "/users/authenticate").withFormUrlEncodedBody("username"->"sangeeta","password"->"12")).get
+      status(home) must equalTo(303)
+    }
+
+    "render the authenticate login with Correct Data" in new WithApplication{
+      val home = route(FakeRequest(POST, "/users/authenticate").withFormUrlEncodedBody("username"->"sangeeta","password"->"123")).get
       status(home) must equalTo(303)
     }
 

@@ -22,10 +22,11 @@ trait LanguageTable { self: HasDatabaseConfigProvider[JdbcProfile] =>
 
   class LanguageTable(tag: Tag) extends Table[Language](tag, "language") {
     val sno = column[Int]("sno")
-    val name = column[String]("name", O.SqlType("VARCHAR(200)"))
+    val studname = column[String]("studname", O.SqlType("VARCHAR(200)"))
+    val langname = column[String]("langname", O.SqlType("VARCHAR(200)"))
     val fluency = column[String]("fluency",O.SqlType("VARCHAR(200)"))
 
-    def * = (sno,name,fluency) <>(Language.tupled, Language.unapply)
+    def * = (sno,studname,langname,fluency) <>(Language.tupled, Language.unapply)
 
   }
 }
@@ -39,6 +40,11 @@ class LanguageRepo @Inject() (protected val dbConfigProvider: DatabaseConfigProv
 
   def getAllLanguage():Future[List[Language]]={
     val statement=languageTableQuery.to[List].result
+    db.run(statement)
+  }
+
+  def getUserLanguage(student:String):Future[List[Language]]={
+    val statement=languageTableQuery.filter(_.studname===student).to[List].result
     db.run(statement)
   }
 

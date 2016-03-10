@@ -2,6 +2,15 @@
 
 
 <div class="container">
+
+    <div class="row">
+        <div class="col-md-1 col-md-offset-11">
+            <a href="@routes.UsersController.logout" style="margin-top:10px;"><button class="btn btn-success">Log out</button></a>
+        </div>
+    </div>
+
+
+
     <h2>User Homepage</h2>
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
@@ -20,6 +29,7 @@
         <div id="menu1" class="tab-pane fade">
             <h3>Awards</h3>
             <p>Awards</p>
+
         </div>
         <div id="menu2" class="tab-pane fade">
             <h3>Language Known</h3>
@@ -42,8 +52,8 @@
     $(document).ready(function(){
     $('#awards').click(function(){
 alert("checked");
-    $.get("localhost:9000/users/getawards",function(data,status){
-    alert(data+""+status);
+    $.get("/users/getawards",function(data,status){
+    $('#menu1').html(data);
     });
     });
 

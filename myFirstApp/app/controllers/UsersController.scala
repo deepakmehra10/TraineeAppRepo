@@ -51,14 +51,13 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo) extends Controlle
 
   def authenticate = Action.async { implicit request =>
     loginForm.bindFromRequest.fold(
-      formWithErrors => Future{Redirect(routes.UsersController.renderLogin()).flashing("error"->" Enter valid Details")},
+      formWithErrors => Future{Redirect(routes.UsersController.renderLogin()).flashing("error"->" Enter data in correct format")},
       loginData => {
 
         val result=checkValidation(loginData.username,loginData.password)
         result.map{ x => if(x == true)
          Redirect(routes.UsersController.renderHomepage).withSession("connected" -> loginData.username)
         else
-
           Redirect(routes.UsersController.renderLogin()).flashing("error" -> " Enter valid Details")
 
         }
@@ -110,10 +109,40 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo) extends Controlle
 
   }
 
- def getAwards=Action{
-    Ok("success")
+ def getAwards=Action.async{ implicit request =>
+    award.getAllAwards.map{ data =>
+      Ok(views.html.adminDashboard.awardTable(data))
+    }
 
   }
+
+ def getLanguages=Action.async{ implicit request =>
+    award.getAllLanguages.map{ data =>
+      Ok(views.html.adminDashboard.languageTable(data))
+    }
+
+  }
+
+  def getAssignment=Action.async{ implicit request =>
+    award.getAllAssignment.map{ data =>
+      Ok(views.html.adminDashboard.assignmentTable(data))
+    }
+
+  }
+
+  def getprogramming=Action.async{ implicit request =>
+    award.getAllProgramming.map{ data =>
+      Ok(views.html.adminDashboard.programmingTable(data))
+    }
+  }
+
+  def getIntern=Action.async{ implicit request =>
+    award.getAllIntern.map{ data =>
+      Ok(views.html.adminDashboard.internTable(data))
+    }
+
+  }
+
 
 
 }
