@@ -50,12 +50,12 @@ class UserRepo @Inject() (protected val dbConfigProvider: DatabaseConfigProvider
     db.run{   result   }
   }
 
+
   def getUserType(name:String):Future[Boolean]={
     val result=userTableQuery.filter(_.name===name).to[List].result
     val finalResult= db.run{ result }
     finalResult.map(x => if( x(0).role == true) true else false)
   }
-
 }
 
 //class UserRepo extends UserRepoApi with MyDBComponent

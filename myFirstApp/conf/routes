@@ -30,7 +30,7 @@ GET   /homepage                               controllers.UsersController.render
 
 POST  /user/homepage                                 controllers.UsersController.renderuserHomepage
 
-GET   /users/login                                    controllers.UsersController.logout
+GET   /user/login                                    controllers.UsersController.logout
 
 GET   /users/getawards                                   controllers.UsersController.getAwards
 

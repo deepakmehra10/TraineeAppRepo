@@ -54,29 +54,51 @@ class UsersControllerSpec extends Specification {
 
 
     "logout the user" in new WithApplication{
-      val home = route(FakeRequest(GET, "/users/login")).get
+      val home = route(FakeRequest(GET, "/user/login")).get
       status(home) must equalTo(303)
     }
 
-    "get awards of user" in new WithApplication{
+    "get awards of user:Admin" in new WithApplication{
       val home = route(FakeRequest(GET, "/users/getawards")).get
       status(home) must equalTo(OK)
     }
 
-    "get languages of user" in new WithApplication{
+    "get languages of user:Admin" in new WithApplication{
       val home = route(FakeRequest(GET, "/users/getlanguage")).get
       status(home) must equalTo(OK)
     }
 
-    "get assignments of user" in new WithApplication{
+    "get assignments of user:Admin" in new WithApplication{
       val home = route(FakeRequest(GET, "/users/getassignment")).get
       status(home) must equalTo(OK)
     }
 
-    "get programming language of user" in new WithApplication{
+    "get programming language of user: Admin" in new WithApplication{
+
       val home = route(FakeRequest(GET, "/users/getprogramming")).get
       status(home) must equalTo(OK)
     }
+
+    "get awards of user" in new WithApplication{
+      val home = route(FakeRequest(GET, "/users/getuserawards").withSession("connected"->"sangeeta")).get
+      status(home) must equalTo(OK)
+    }
+
+    "get languages of user" in new WithApplication{
+      val home = route(FakeRequest(GET, "/users/getuserlanguage").withSession("connected"->"sangeeta")).get
+      status(home) must equalTo(OK)
+    }
+
+    "get assignments of user" in new WithApplication{
+      val home = route(FakeRequest(GET, "/users/getuserassignment").withSession("connected"->"sangeeta")).get
+      status(home) must equalTo(OK)
+    }
+
+    "get programming language of user" in new WithApplication{
+      val home = route(FakeRequest(GET, "/users/getuserprogramming").withSession("connected"->"sangeeta")).get
+      status(home) must equalTo(OK)
+    }
+
 
   }
 }

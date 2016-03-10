@@ -23,7 +23,8 @@ import scala.concurrent.{Await, Future}
 case class UsersData(username: String,email:String,password:String,repassword:String)
 case class LoginData(username:String,password:String)
 
-class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageRepo,assignment:AssignmentRepo,programming:ProgrammingLanguageRepo) extends Controller {
+class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageRepo,assignment:AssignmentRepo,
+                                programming:ProgrammingLanguageRepo) extends Controller {
 
   val signupForm = Form(
     mapping(
@@ -51,15 +52,15 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
 
   def authenticate = Action.async { implicit request =>
     loginForm.bindFromRequest.fold(
-      formWithErrors => Future{Redirect(routes.UsersController.renderLogin()).flashing("error"->" Enter data in correct format")},
+      formWithErrors => Future{Redirect(routes.UsersController.renderLogin()).
+        flashing("error"->" Enter data in correct format")},
       loginData => {
-
         val result=checkValidation(loginData.username,loginData.password)
-        result.map{ x => if(x == true)
-         Redirect(routes.UsersController.renderHomepage).withSession("connected" -> loginData.username)
-        else
+        result.map{ response => if( response == true) {
+          Redirect(routes.UsersController.renderHomepage).withSession("connected" -> loginData.username)
+        }else {
           Redirect(routes.UsersController.renderLogin()).flashing("error" -> " Enter valid Details")
-
+        }
         }
       }
     )
@@ -68,11 +69,11 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
   def renderHomepage=Action { implicit request=>
     //Ok("success")
     request.session.get("connected").map { user =>
-      if(user=="admin")
+      if(user=="admin") {
         Ok(views.html.adminhomepage())
-      else
+      }else {
         Ok(views.html.homepage())
-       }.getOrElse{
+      }}.getOrElse{
        Unauthorized("Oops, you are not connected")
        }
 
@@ -104,21 +105,18 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
   def logout=Action{
     implicit request=>
     Redirect(routes.UsersController.renderLogin()).withNewSession
-
   }
 
  def getAwards=Action.async{ implicit request =>
     award.getAllAwards.map{ data =>
       Ok(views.html.adminDashboard.awardTable(data))
     }
-
   }
 
  def getLanguages=Action.async{ implicit request =>
     language.getAllLanguage.map{ data =>
       Ok(views.html.adminDashboard.languageTable(data))
     }
-
   }
 
   def getAssignment=Action.async{ implicit request =>
