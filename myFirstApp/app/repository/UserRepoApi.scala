@@ -7,7 +7,7 @@ import slick.driver.JdbcProfile
 import play.api.db.slick.DatabaseConfigProvider
 import play.api.db.slick.HasDatabaseConfigProvider
 import scala.concurrent.ExecutionContext.Implicits.global
-import connection.{MyDBComponent, DbComponent}
+
 import models.User
 
 import scala.concurrent.Future
@@ -37,7 +37,6 @@ trait UserTable { self: HasDatabaseConfigProvider[JdbcProfile] =>
 @Singleton()
 class UserRepo @Inject() (protected val dbConfigProvider: DatabaseConfigProvider) extends UserTable with
   HasDatabaseConfigProvider[JdbcProfile] {
-  this: DbComponent =>
 
   import driver.api._
 

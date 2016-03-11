@@ -2,7 +2,6 @@ package repository
 
 import javax.inject.{Inject, Singleton}
 
-import connection.DbComponent
 import play.api.db.slick.{DatabaseConfigProvider, HasDatabaseConfigProvider}
 import slick.driver.JdbcProfile
 
@@ -34,7 +33,6 @@ trait ProgrammingLanguageTable { self: HasDatabaseConfigProvider[JdbcProfile] =>
 @Singleton()
 class ProgrammingLanguageRepo @Inject() (protected val dbConfigProvider: DatabaseConfigProvider) extends ProgrammingLanguageTable with
   HasDatabaseConfigProvider[JdbcProfile] {
-  this: DbComponent =>
 
   import driver.api._
 

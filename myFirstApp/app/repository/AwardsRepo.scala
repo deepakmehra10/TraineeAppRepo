@@ -2,7 +2,7 @@ package repository
 
 import javax.inject.{Inject, Singleton}
 
-import connection.DbComponent
+
 
 import play.api.db.slick.{DatabaseConfigProvider, HasDatabaseConfigProvider}
 import slick.driver.JdbcProfile
@@ -36,7 +36,6 @@ trait AwardTable { self: HasDatabaseConfigProvider[JdbcProfile] =>
 @Singleton()
 class AwardRepo @Inject() (protected val dbConfigProvider: DatabaseConfigProvider) extends AwardTable with
   HasDatabaseConfigProvider[JdbcProfile] {
-  this: DbComponent =>
 
   import driver.api._
 

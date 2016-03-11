@@ -2,8 +2,6 @@ package repository
 
 import javax.inject.{Inject, Singleton}
 
-import connection.DbComponent
-
 import play.api.db.slick.{DatabaseConfigProvider, HasDatabaseConfigProvider}
 import slick.driver.JdbcProfile
 
@@ -36,7 +34,6 @@ trait InternTable { self: HasDatabaseConfigProvider[JdbcProfile] =>
 @Singleton()
 class InternRepo @Inject() (protected val dbConfigProvider: DatabaseConfigProvider) extends InternTable with
   HasDatabaseConfigProvider[JdbcProfile] {
-  this: DbComponent =>
 
   import driver.api._
 
