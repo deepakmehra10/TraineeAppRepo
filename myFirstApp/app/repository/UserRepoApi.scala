@@ -45,18 +45,21 @@ class UserRepo @Inject() (protected val dbConfigProvider: DatabaseConfigProvider
     userTableQuery += user
   }
 
-  def validateUser(name:String,password:String)={
-        val result=userTableQuery.filter(_.name===name).filter(_.password===password).to[List].result
-    db.run{   result   }
+  def validateUser(name: String, password: String) = {
+    val result = userTableQuery.filter(_.name === name).filter(_.password === password).to[List].result
+    db.run {
+      result
+    }
   }
-
-
+}
+/*
   def getUserType(name:String):Future[Boolean]={
     val result=userTableQuery.filter(_.name===name).to[List].result
     val finalResult= db.run{ result }
     finalResult.map(x => if( x(0).role == true) true else false)
   }
-}
+  */
+
 
 //class UserRepo extends UserRepoApi with MyDBComponent
 /*

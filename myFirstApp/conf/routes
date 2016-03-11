@@ -17,16 +17,16 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 
 
-GET     /webjars/*file                    controllers.WebJarAssets.at(file)
+GET     /webjars/*file                               controllers.WebJarAssets.at(file)
 
 
-GET   /signup                           controllers.UsersController.renderSignUp()
+GET   /signup                                        controllers.UsersController.renderSignUp()
 
-GET   /users/login                           controllers.UsersController.renderLogin()
+GET   /users/login                                   controllers.UsersController.renderLogin()
 
-POST  /users/authenticate                    controllers.UsersController.authenticate
+POST  /users/authenticate                            controllers.UsersController.authenticate
 
-GET   /homepage                               controllers.UsersController.renderHomepage
+GET   /homepage                                      controllers.UsersController.renderHomepage
 
 POST  /user/homepage                                 controllers.UsersController.renderuserHomepage
 
@@ -47,3 +47,7 @@ GET       /users/getuserassignment                          controllers.UsersCon
 GET       /users/getuserlanguage                           controllers.UsersController.getUserLanguage
 
 GET      /users/getuserprogramming                         controllers.UsersController.getUserProgramming
+
+GET      /users/getintern                             controllers.UsersController.getInterns
+
+POST     /admin/addintern                             controllers.UsersController.addInterns

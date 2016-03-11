@@ -99,6 +99,16 @@ class UsersControllerSpec extends Specification {
       status(home) must equalTo(OK)
     }
 
+    "get all interns" in new WithApplication{
+      val home = route(FakeRequest(GET, "/users/getintern")).get
+      status(home) must equalTo(OK)
+    }
+
+
+    "Add interns" in new WithApplication{
+      val home = route(FakeRequest(POST, "/admin/addintern").withFormUrlEncodedBody("name"->"deepak","email"->"deep@gmail.com","mobile"->"3546354","award"->"C#")).get
+      status(home) must equalTo(OK)
+    }
 
   }
 }

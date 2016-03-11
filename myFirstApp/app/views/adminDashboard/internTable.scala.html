@@ -1,0 +1,29 @@
+@(listOfInterns:List[repository.Interns])
+
+<h1>List of Interns </h1>
+<p>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Student Email</th>
+        <th>Contact Number</th>
+        <th>Award Details</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    @for(items <- listOfInterns ){
+
+    <tr>
+        <td>@items.name</td>
+        <td>@items.email</td>
+        <td>@items.mobile</td>
+        <td>@items.award</td>
+    </tr>
+
+
+    }
+    </tbody>
+</table>
+</p>
