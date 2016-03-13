@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="960ff02d-4a88-4bd3-9049-04835ab81e25" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myFirstApp/app/controllers/UsersController.scala" afterPath="$PROJECT_DIR$/myFirstApp/app/controllers/UsersController.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myFirstApp/app/repository/AssignmentRepo.scala" afterPath="$PROJECT_DIR$/myFirstApp/app/repository/AssignmentRepo.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myFirstApp/app/views/adminDashboard/assignmentTable.scala.html" afterPath="$PROJECT_DIR$/myFirstApp/app/views/adminDashboard/assignmentTable.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myFirstApp/app/views/adminhomepage.scala.html" afterPath="$PROJECT_DIR$/myFirstApp/app/views/adminhomepage.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myFirstApp/test/UsersControllerSpec.scala" afterPath="$PROJECT_DIR$/myFirstApp/test/UsersControllerSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myFirstApp/app/views/homepage.scala.html" afterPath="$PROJECT_DIR$/myFirstApp/app/views/homepage.scala.html" />
     </list>
     <ignored path="TraineeAppRepo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/myFirstApp/app/controllers/UsersController.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-9.193548">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <caret line="193" column="55" selection-start-line="193" selection-start-column="55" selection-end-line="193" selection-end-column="55" />
               <folding>
                 <element signature="e#21#47#0" expanded="true" />
               </folding>
@@ -51,12 +55,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersControllerSpec.scala" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/myFirstApp/test/UsersControllerSpec.scala">
+      <file leaf-file-name="homepage.scala.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/homepage.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.859375">
-              <caret line="126" column="5" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
-              <folding />
+            <state vertical-scroll-proportion="0.44045678">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#p#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,11 +70,11 @@
       <file leaf-file-name="adminhomepage.scala.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/adminhomepage.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.703704">
-              <caret line="198" column="12" selection-start-line="198" selection-start-column="12" selection-end-line="198" selection-end-column="12" />
+            <state vertical-scroll-proportion="-16.037037">
+              <caret line="245" column="8" selection-start-line="245" selection-start-column="8" selection-end-line="245" selection-end-column="8" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#p#0;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#6;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#p#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,10 +94,32 @@
         <entry file="file://$PROJECT_DIR$/myFirstApp/app/repository/AssignmentRepo.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+              <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
               <folding>
                 <element signature="e#20#59#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AwardsRepo.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myFirstApp/app/repository/AwardsRepo.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="42" column="49" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
+              <folding>
+                <element signature="e#20#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myFirstApp/conf/evolutions/default/1.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -127,7 +155,6 @@
         <option value="$PROJECT_DIR$/myFirstApp/app/views/adminDashboard/awardTable.scala.html" />
         <option value="$PROJECT_DIR$/myFirstApp/app/views/adminDashboard/languageTable.scala.html" />
         <option value="$PROJECT_DIR$/myFirstApp/app/views/adminDashboard/progLanguageTable.scala.html" />
-        <option value="$PROJECT_DIR$/myFirstApp/app/views/homepage.scala.html" />
         <option value="$PROJECT_DIR$/myFirstApp/test/repository/AssignmentRepoSpec.scala" />
         <option value="$PROJECT_DIR$/myFirstApp/test/repository/AwardRepoSpec.scala" />
         <option value="$PROJECT_DIR$/myFirstApp/test/repository/LanguageRepoSpec.scala" />
@@ -149,13 +176,14 @@
         <option value="$PROJECT_DIR$/myFirstApp/conf/test.conf" />
         <option value="$PROJECT_DIR$/myFirstApp/test/repository/InternRepoSpec.scala" />
         <option value="$PROJECT_DIR$/myFirstApp/test/IntegrationSpec.scala" />
-        <option value="$PROJECT_DIR$/myFirstApp/app/views/adminDashboard/assignmentTable.scala.html" />
         <option value="$PROJECT_DIR$/myFirstApp/conf/evolutions/default/1.sql" />
         <option value="$PROJECT_DIR$/myFirstApp/conf/routes" />
-        <option value="$PROJECT_DIR$/myFirstApp/app/controllers/UsersController.scala" />
-        <option value="$PROJECT_DIR$/myFirstApp/app/repository/AssignmentRepo.scala" />
-        <option value="$PROJECT_DIR$/myFirstApp/app/views/adminhomepage.scala.html" />
         <option value="$PROJECT_DIR$/myFirstApp/test/UsersControllerSpec.scala" />
+        <option value="$PROJECT_DIR$/myFirstApp/app/views/adminhomepage.scala.html" />
+        <option value="$PROJECT_DIR$/myFirstApp/app/controllers/UsersController.scala" />
+        <option value="$PROJECT_DIR$/myFirstApp/app/views/adminDashboard/assignmentTable.scala.html" />
+        <option value="$PROJECT_DIR$/myFirstApp/app/repository/AssignmentRepo.scala" />
+        <option value="$PROJECT_DIR$/myFirstApp/app/views/homepage.scala.html" />
       </list>
     </option>
   </component>
@@ -439,6 +467,32 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="repository" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TraineeAppRepo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TraineeAppRepo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myFirstApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AwardsRepo.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -983,7 +1037,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985073" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1163,13 +1217,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/adminDashboard/languageTable.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/adminDashboard/progLanguageTable.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5954198">
@@ -1275,13 +1322,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/app/repository/AwardsRepo.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myFirstApp/app/repository/UserRepoApi.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.253125">
@@ -1293,14 +1333,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.037037">
           <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/homepage.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1347,23 +1379,47 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
-            <element signature="e#18#54#0" expanded="true" />
+            <element signature="e#18#54#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/conf/evolutions/default/1.sql">
+    <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/adminDashboard/internTable.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.67742">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.7928222">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myFirstApp/test/UsersControllerSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71875">
+          <caret line="126" column="5" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/adminDashboard/languageTable.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67536706">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/adminDashboard/assignmentTable.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.37037">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7797716">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myFirstApp/conf/evolutions/default/1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1376,31 +1432,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/adminDashboard/internTable.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7928222">
-          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/app/repository/AssignmentRepo.scala">
+    <entry file="file://$PROJECT_DIR$/myFirstApp/app/repository/AwardsRepo.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+          <caret line="42" column="49" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
           <folding>
             <element signature="e#20#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/adminhomepage.scala.html">
+    <entry file="file://$PROJECT_DIR$/myFirstApp/app/repository/AssignmentRepo.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.703704">
-          <caret line="198" column="12" selection-start-line="198" selection-start-column="12" selection-end-line="198" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#p#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#6;n#!!top" expanded="true" />
+            <element signature="e#20#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1408,18 +1455,31 @@
     <entry file="file://$PROJECT_DIR$/myFirstApp/app/controllers/UsersController.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.193548">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <caret line="193" column="55" selection-start-line="193" selection-start-column="55" selection-end-line="193" selection-end-column="55" />
           <folding>
             <element signature="e#21#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/test/UsersControllerSpec.scala">
+    <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/adminhomepage.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.859375">
-          <caret line="126" column="5" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
-          <folding />
+        <state vertical-scroll-proportion="-16.037037">
+          <caret line="245" column="8" selection-start-line="245" selection-start-column="8" selection-end-line="245" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#p#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myFirstApp/app/views/homepage.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44045678">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#p#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

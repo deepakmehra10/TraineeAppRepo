@@ -86,7 +86,7 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
       if(user=="admin") {
         Ok(views.html.adminhomepage(internForm,assignmentForm))
       }else {
-        Ok(views.html.homepage())
+        Ok(views.html.homepage(assignmentForm))
       }}.getOrElse{
        Unauthorized("Oops, you are not connected")
        }
@@ -109,7 +109,7 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
 */
   def renderuserHomepage= Action {
     implicit request=>
-      Ok(views.html.homepage())
+      Ok(views.html.homepage(assignmentForm))
   }
 
 

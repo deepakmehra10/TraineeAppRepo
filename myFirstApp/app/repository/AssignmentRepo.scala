@@ -12,7 +12,7 @@ import scala.concurrent.Future
   * Created by knodus on 9/3/16.
   */
 
-case class Assignment(sno:Int,studname:String,name:String,date:String,marks:Int,remarks:String)
+case class Assignment(sno:Int=0,studname:String,name:String,date:String,marks:Int,remarks:String)
 
 trait AssignmentTable { self: HasDatabaseConfigProvider[JdbcProfile] =>
 
@@ -50,7 +50,7 @@ class AssignmentRepo @Inject() (protected val dbConfigProvider: DatabaseConfigPr
   }
 
   def addAssignment(assignment:Assignment)={
-    val assign=Assignment(99999,assignment.studname,assignment.name,assignment.date,assignment.marks,assignment.remarks)
+    val assign=Assignment(777,assignment.studname,assignment.name,assignment.date,assignment.marks,assignment.remarks)
     val statement=assignmentTableQuery += assign
     db.run(statement)
   }

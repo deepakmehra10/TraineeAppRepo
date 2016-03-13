@@ -34,54 +34,7 @@
 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add Record</button>
 
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <!--<div class="modal-header">-->
-                            <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
-                            <!--<h4 class="modal-title">Add Awards</h4>-->
-                        <!--</div>-->
-                        <div class="modal-body">
-                            <p>
-                            <!--<form role="form">-->
-                                <!--<div class="form-group">-->
-                                    <!--<label for="sno">S.No</label>-->
-                                    <!--<input type="text" class="form-control" id="sno">-->
-                                <!--</div>-->
-                                <!--<div class="form-group">-->
-                                    <!--<label for="name">Name</label>-->
-                                    <!--<input type="text" class="form-control" id="name">-->
-                                <!--</div>-->
-
-                            <!--<div class="form-group">-->
-                                <!--<label for="detail">Detail</label>-->
-                                <!--<input type="text" class="form-control" id="detail">-->
-                            <!--</div>-->
-
-
-                            <!--<div class="form-group">-->
-                                <!--<label for="year">Year</label>-->
-                                <!--<input type="text" class="form-control" id="year">-->
-                            <!--</div>-->
-
-
-                                <!--<button type="submit" class="btn btn-default">Add</button>-->
-                            <!--</form>-->
-
-
-
-
-                            </p>
-                        </div>
-                        <!--<div class="modal-footer">-->
-                            <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-                        <!--</div>-->
-                    </div>
-
-                </div>
-            </div>
+            <div class="modal fade" id="myModal" role="dialog"></div>
 
             </p>
         </div>
@@ -92,52 +45,7 @@
 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Add Record</button>
 
-            <div class="modal fade" id="myModal1" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Languages Known</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>
-
-
-                            <form role="form">
-                                <div class="form-group">
-                                    <label for="sno1">S.No</label>
-                                    <input type="text" class="form-control" id="sno1">
-                                </div>
-                                <div class="form-group">
-                                    <label for="langname">Language-Name</label>
-                                    <input type="text" class="form-control" id="langname">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="fluency">Fluency</label>
-                                    <input type="text" class="form-control" id="fluency">
-                                </div>
-
-
-
-
-                                <button type="submit" class="btn btn-default">Add</button>
-                            </form>
-
-
-
-
-                            </p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            <div class="modal fade" id="myModal1" role="dialog"></div>
 
 
             </p>
@@ -145,7 +53,7 @@
 
         <div id="menu3" class="tab-pane fade">
 
-            <div id="assignmentRecord"></div>
+              <div id="assignmentRecord"></div>
             <p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Add Record</button>
             <div class="modal fade" id="myModal2" role="dialog">
@@ -164,12 +72,12 @@
             </div>
             <p>
                 @b3.form(action=routes.UsersController.addAssignments, 'id -> "myAssignmentForm" ) {
-                @b3.number( internForm("sno"), '_label -> "Serial No.",'value -> "1" )
-                @b3.text( internForm("studname"), '_label -> "Student Name",'placeholder -> "Enter Student Name" )
-                @b3.text( internForm("name"), '_label -> "Assignment Name",'placeholder -> "Enter Assignment Name" )
-                @b3.date( internForm("date"), '_label -> "Date",'placeholder -> "Enter Date" )
-                @b3.number( internForm("marks"), '_label -> "Marks",'placeholder -> "Enter Marks" )
-                @b3.text( internForm("remarks"), '_label -> "Remarks",'placeholder -> "Enter Remarks" )
+                @b3.number( assignmentForm("sno"), '_label -> "Serial No.",'value -> "1" )
+                @b3.text( assignmentForm("studname"), '_label -> "Student Name",'placeholder -> "Enter Student Name" )
+                @b3.text( assignmentForm("name"), '_label -> "Assignment Name",'placeholder -> "Enter Assignment Name" )
+                @b3.date( assignmentForm("date"), '_label -> "Date",'placeholder -> "Enter Date" )
+                @b3.number( assignmentForm("marks"), '_label -> "Marks",'placeholder -> "Enter Marks" )
+                @b3.text( assignmentForm("remarks"), '_label -> "Remarks",'placeholder -> "Enter Remarks" )
                 <button type="submit" id="assignmentadd" class="btn btn-default">Add</button>
                 }
             </p>
@@ -319,8 +227,6 @@
 </script>
 
 <script>
-
-
 $(document).ready(function(){
 
 $('#myForm').submit(function(e){
