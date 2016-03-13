@@ -18,8 +18,8 @@ class InternRepoSpec extends Specification{
 
     "Get all interns records test" in new WithApplication {
       val result = Await.result(internRepo.getAllInterns(), 5 seconds)
-      assert(result.length === 3)
-    //  assert(result === List(Interns("sangeeta", "sang@gmail.com", 4342534, "Java Certified"), Interns("admin","admin@gmail.com",2432466,"C# Certified")))
+      assert(result.length === 2)
+      assert(result === List(Interns("sangeeta", "sang@gmail.com", 4342534, "Java Certified"), Interns("admin","admin@gmail.com",2432466,"C# Certified")))
     }
 
     "Add intern test" in new WithApplication {

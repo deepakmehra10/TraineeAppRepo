@@ -19,9 +19,6 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 GET     /webjars/*file                               controllers.WebJarAssets.at(file)
 
-
-GET   /signup                                        controllers.UsersController.renderSignUp()
-
 GET   /users/login                                   controllers.UsersController.renderLogin()
 
 POST  /users/authenticate                            controllers.UsersController.authenticate
@@ -51,3 +48,5 @@ GET      /users/getuserprogramming                         controllers.UsersCont
 GET      /users/getintern                             controllers.UsersController.getInterns
 
 POST     /admin/addintern                             controllers.UsersController.addInterns
+
+POST     /admin/addassignment                         controllers.UsersController.addAssignments

@@ -26,15 +26,6 @@ case class LoginData(username:String,password:String)
 class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageRepo,assignment:AssignmentRepo,
                                 intern:InternRepo,programming:ProgrammingLanguageRepo) extends Controller {
 
-  val signupForm = Form(
-    mapping(
-      "username" -> text,
-      "email" -> text,
-      "password"->text,
-      "repassword"->text
-    )(UsersData.apply)(UsersData.unapply)
-
-  )
 
   val loginForm = Form(
     mapping(
@@ -53,6 +44,19 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
 
     )(repository.Interns.apply)(repository.Interns.unapply)
   )
+
+  val assignmentForm = Form(
+    mapping(
+      "sno" -> number,
+      "studname"-> nonEmptyText,
+      "name" -> nonEmptyText,
+      "date"->nonEmptyText,
+      "marks"->number,
+      "remarks"->nonEmptyText
+
+    )(repository.Assignment.apply)(repository.Assignment.unapply)
+  )
+
 
   def checkValidation(username:String,password:String): Future[Boolean]={
     val result:Future[List[User]]=user.validateUser(username,password)
@@ -80,7 +84,7 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
     //Ok("success")
     request.session.get("connected").map { user =>
       if(user=="admin") {
-        Ok(views.html.adminhomepage(internForm))
+        Ok(views.html.adminhomepage(internForm,assignmentForm))
       }else {
         Ok(views.html.homepage())
       }}.getOrElse{
@@ -89,10 +93,7 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
 
     }
 
-  def renderSignUp() = Action {
-    implicit request=>
-      Ok(views.html.signup(signupForm))
-  }
+
 
   def renderLogin() = Action {
     implicit request=>
@@ -141,14 +142,6 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
       Ok(views.html.adminDashboard.progLanguageTable(data))
     }
   }
-/*
-  def getIntern=Action.async{ implicit request =>
-    award.getAllIntern.map{ data =>
-      Ok(views.html.adminDashboard.internTable(data))
-    }
-
-  }
-*/
 
   def getUserAwards=Action.async{ implicit request =>
     val user= request.session.get("connected")
@@ -194,10 +187,19 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
       val internRecord = internForm.bindFromRequest.get
       intern.addInterns(internRecord)
       intern.getAllInterns.map { data =>
-        Ok(views.html.adminhomepage(internForm))
+        Ok(views.html.adminhomepage(internForm,assignmentForm))
       }
     }
 
+  def addAssignments=Action.async { implicit request =>
+
+    val assignmentRecord = assignmentForm.bindFromRequest.get
+    assignment.addAssignment(assignmentRecord)
+    assignment.getAllAssignment.map { data =>
+      Ok(views.html.adminhomepage(internForm,assignmentForm))
+    }
+
+  }
 
 
 }

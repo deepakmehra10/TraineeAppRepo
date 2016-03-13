@@ -21,7 +21,7 @@ trait AssignmentTable { self: HasDatabaseConfigProvider[JdbcProfile] =>
   val assignmentTableQuery = TableQuery[AssignmentTable]
 
   class AssignmentTable(tag: Tag) extends Table[Assignment](tag,"assignment") {
-    val sno = column[Int]("sno")
+    val sno = column[Int]("sno",O.PrimaryKey, O.AutoInc)
     val studname = column[String]("studname", O.SqlType("VARCHAR(200)"))
     val name = column[String]("name", O.SqlType("VARCHAR(200)"))
     val date = column[String]("date",O.SqlType("VARCHAR(50)"))
@@ -50,8 +50,11 @@ class AssignmentRepo @Inject() (protected val dbConfigProvider: DatabaseConfigPr
   }
 
   def addAssignment(assignment:Assignment)={
-    val statement=assignmentTableQuery += assignment
+    val assign=Assignment(99999,assignment.studname,assignment.name,assignment.date,assignment.marks,assignment.remarks)
+    val statement=assignmentTableQuery += assign
     db.run(statement)
   }
+
+
 
 }

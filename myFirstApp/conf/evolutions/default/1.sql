@@ -2,7 +2,7 @@
 CREATE TABLE "traineeuser" ("username" VARCHAR(200),"userpassword" VARCHAR(100),"userrole" boolean,"userid" serial PRIMARY KEY );
 CREATE TABLE "awards" ("sno" INT,"name" VARCHAR(200),"details" VARCHAR(200),"year" INT);
 CREATE TABLE "language" ("sno" INT,"studname" VARCHAR(200),"langname" VARCHAR(200),"fluency" VARCHAR(200));
-CREATE TABLE "assignment" ("sno" INT,"studname" VARCHAR(200),"name" VARCHAR(200),"date" VARCHAR(50),"marks" INT,"remarks" VARCHAR(200));
+CREATE TABLE "assignment" ("sno" serial PRIMARY KEY ,"studname" VARCHAR(200),"name" VARCHAR(200),"date" VARCHAR(50),"marks" INT,"remarks" VARCHAR(200));
 CREATE TABLE "programming_language" ("sno" INT,"studname" VARCHAR(200),"langname" VARCHAR(200),"fluency" VARCHAR(200));
 CREATE TABLE "intern"("name" VARCHAR(200), "email" VARCHAR(200),"mobile" INT,"award" VARCHAR(200));
 

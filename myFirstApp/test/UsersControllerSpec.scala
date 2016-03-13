@@ -46,6 +46,16 @@ class UsersControllerSpec extends Specification {
       status(home) must equalTo(401)
     }
 
+    "render Home page with admin: authorised Access" in new WithApplication{
+      val home = route(FakeRequest(GET, "/homepage").withSession("connected"->"admin")).get
+      status(home) must equalTo(OK)
+    }
+
+    "render Home page with user: authorised Access" in new WithApplication{
+      val home = route(FakeRequest(GET, "/homepage").withSession("connected"->"sangeeta")).get
+      status(home) must equalTo(OK)
+    }
+
     "render Home page with trainee account: Unauthorised Access" in new WithApplication{
       val home = route(FakeRequest(GET, "/homepage").withFormUrlEncodedBody("username"->"sangeeta","password"->"123")).get
       status(home) must equalTo(401)

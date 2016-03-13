@@ -22,7 +22,18 @@ class UserControllerTest extends FlatSpec{
       val driver=new FirefoxDriver()
       driver.get(baseUrl)
       driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS)
-      driver.findElementByClassName("btn").click()
+
+      //driver.findElementById("username").sendKeys("admin")
+      //driver.findElementById("password").sendKeys("admin")
+
+      driver.findElementByCssSelector(".form-group #username").sendKeys("admin")
+      driver.findElementByCssSelector("#password").sendKeys("admin")
+
+      driver.findElementByCssSelector(".btn").click()
+      //driver.findElementByClassName("btn").click()
+
+
+
 
     }
 

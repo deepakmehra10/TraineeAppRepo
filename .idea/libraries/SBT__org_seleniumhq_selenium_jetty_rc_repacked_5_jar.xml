@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: org.seleniumhq.selenium:jetty-rc-repacked:5:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.seleniumhq.selenium/jetty-rc-repacked/jars/jetty-rc-repacked-5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.seleniumhq.selenium/jetty-rc-repacked/srcs/jetty-rc-repacked-5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
