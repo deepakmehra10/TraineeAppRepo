@@ -12,7 +12,7 @@ import scala.concurrent.Future
   * Created by knodus on 9/3/16.
   */
 
-case class Assignment(sno:Int=0,studname:String,name:String,date:String,marks:Int,remarks:String)
+case class Assignment(studname:String,name:String,date:String,marks:Int,remarks:String,sno:Int=0)
 
 trait AssignmentTable { self: HasDatabaseConfigProvider[JdbcProfile] =>
 
@@ -21,14 +21,14 @@ trait AssignmentTable { self: HasDatabaseConfigProvider[JdbcProfile] =>
   val assignmentTableQuery = TableQuery[AssignmentTable]
 
   class AssignmentTable(tag: Tag) extends Table[Assignment](tag,"assignment") {
-    val sno = column[Int]("sno",O.PrimaryKey, O.AutoInc)
     val studname = column[String]("studname", O.SqlType("VARCHAR(200)"))
     val name = column[String]("name", O.SqlType("VARCHAR(200)"))
     val date = column[String]("date",O.SqlType("VARCHAR(50)"))
     val marks= column[Int]("marks")
     val remarks = column[String]("remarks", O.SqlType("VARCHAR(200)"))
+    val sno = column[Int]("sno",O.PrimaryKey, O.AutoInc)
 
-    def * = (sno,studname,name,date,marks,remarks) <>(Assignment.tupled, Assignment.unapply)
+    def * = (studname,name,date,marks,remarks,sno) <>(Assignment.tupled, Assignment.unapply)
 
   }
 }
@@ -50,7 +50,7 @@ class AssignmentRepo @Inject() (protected val dbConfigProvider: DatabaseConfigPr
   }
 
   def addAssignment(assignment:Assignment)={
-    val assign=Assignment(777,assignment.studname,assignment.name,assignment.date,assignment.marks,assignment.remarks)
+    val assign=Assignment(assignment.studname,assignment.name,assignment.date,assignment.marks,assignment.remarks)
     val statement=assignmentTableQuery += assign
     db.run(statement)
   }

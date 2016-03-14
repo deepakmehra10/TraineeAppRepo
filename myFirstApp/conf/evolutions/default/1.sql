@@ -1,6 +1,6 @@
 # --- !Ups
 CREATE TABLE "traineeuser" ("username" VARCHAR(200),"userpassword" VARCHAR(100),"userrole" boolean,"userid" serial PRIMARY KEY );
-CREATE TABLE "awards" ("sno" INT,"name" VARCHAR(200),"details" VARCHAR(200),"year" INT);
+CREATE TABLE "awards" ("name" VARCHAR(200),"details" VARCHAR(200),"year" INT,"sno" serial PRIMARY KEY,);
 CREATE TABLE "language" ("sno" INT,"studname" VARCHAR(200),"langname" VARCHAR(200),"fluency" VARCHAR(200));
 CREATE TABLE "assignment" ("sno" serial PRIMARY KEY ,"studname" VARCHAR(200),"name" VARCHAR(200),"date" VARCHAR(50),"marks" INT,"remarks" VARCHAR(200));
 CREATE TABLE "programming_language" ("sno" INT,"studname" VARCHAR(200),"langname" VARCHAR(200),"fluency" VARCHAR(200));
@@ -10,8 +10,8 @@ CREATE TABLE "intern"("name" VARCHAR(200), "email" VARCHAR(200),"mobile" INT,"aw
 
 INSERT INTO "traineeuser" VALUES('test','123',false,1);
 
-INSERT INTO "awards" VALUES(1,'akshay','Lan game First Prize',2016);
-INSERT INTO "awards" VALUES(2,'deepak','Coding First Prize',2016);
+INSERT INTO "awards" VALUES('akshay','Lan game First Prize',2016,1);
+INSERT INTO "awards" VALUES('deepak','Coding First Prize',2016,2);
 
 INSERT INTO "language" VALUES(1,'akshay','hindi','read/write');
 INSERT INTO "language" VALUES(2,'deepak','english','read/write');

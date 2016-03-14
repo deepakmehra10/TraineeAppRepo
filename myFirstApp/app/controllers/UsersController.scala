@@ -47,13 +47,12 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
 
   val assignmentForm = Form(
     mapping(
-      "sno" -> number,
       "studname"-> nonEmptyText,
       "name" -> nonEmptyText,
       "date"->nonEmptyText,
       "marks"->number,
-      "remarks"->nonEmptyText
-
+      "remarks"->nonEmptyText,
+      "sno" -> number
     )(repository.Assignment.apply)(repository.Assignment.unapply)
   )
 

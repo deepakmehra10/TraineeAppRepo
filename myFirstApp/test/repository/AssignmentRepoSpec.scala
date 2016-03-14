@@ -17,22 +17,18 @@ class AssignmentRepoSpec extends Specification{
     "Get all assignment records test" in new WithApplication {
       val result = Await.result(assignmentRepo.getAllAssignment, 5 seconds)
       assert(result.length === 2)
-      assert(result === List(Assignment(1,"akshay","scala","1st jan",6,"average"),Assignment(2,"deepak","scala","3rd jan",6,"average")))
+      assert(result === List(Assignment("akshay","scala","1st jan",6,"average",1),Assignment("deepak","scala","3rd jan",6,"average",2)))
     }
 
     "Add assignment test" in new WithApplication {
-      val result = Await.result(assignmentRepo.addAssignment(Assignment(3,"Sangeeta","Scala","1st jan",6,"average")), 5 seconds)
+      val result = Await.result(assignmentRepo.addAssignment(Assignment("Sangeeta","Scala","1st jan",6,"average",3)), 5 seconds)
       assert(result === 1)
     }
 
     "Get assignment record test" in new WithApplication {
       val result = Await.result(assignmentRepo.getUserAssignment("akshay"), 5 seconds)
       assert(result.length === 1)
-      assert(result === List(Assignment(1,"akshay","scala","1st jan",6,"average")))
+      assert(result === List(Assignment("akshay","scala","1st jan",6,"average",1)))
     }
   }
-
-
-
-
 }
