@@ -50,3 +50,5 @@ GET      /users/getintern                             controllers.UsersControlle
 POST     /admin/addintern                             controllers.UsersController.addInterns
 
 POST     /admin/addassignment                         controllers.UsersController.addAssignments
+
+POST     /user/addaward                         controllers.UsersController.addAwards

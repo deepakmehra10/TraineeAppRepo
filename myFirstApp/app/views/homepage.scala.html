@@ -29,10 +29,62 @@
             <p>HOME</p>
         </div>
 
+        <!-- Awards div started -->
         <div id="menu1" class="tab-pane fade">
             <div id="awardsDiv"></div>
 
+            <p>
+               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4">Add Record</button>
+
+            <div class="modal fade" id="myModal4" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Add Award</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="alert alert-success message" id="successAward" style="display:none;">
+                                <strong>Success!</strong>Award has been successfully added.
+                            </div>
+                            <p>
+
+                                @b3.form(action=routes.UsersController.addAwards, 'id -> "awardForm" ) {
+
+                                @b3.text( awardForm("name"), '_label -> "Student Name",'placeholder -> "Enter Name" )
+                                @b3.text( awardForm("details"), '_label -> "Details",'placeholder -> "Enter Award Details" )
+                                @b3.number( awardForm("year"), '_label -> "Year",'placeholder -> "Enter Year" )
+                                @b3.number( awardForm("sno"), '_label -> "Serial Number",'value->"1" )
+
+                                <button type="submit" id="awardadd" class="btn btn-default">Add</button>
+
+                                }
+
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+            </p>
+
+
+
+
+
+
         </div>
+        <!-- Awards div ended -->
 
         <div id="menu2" class="tab-pane fade">
             <div id="languageDiv"> </div>
@@ -113,21 +165,21 @@ $('#myAssignmentForm')[0].reset();
 });
 </script>
 
-<!--<script>-->
-<!--$(document).ready(function(){-->
+<script>
+$(document).ready(function(){
 
-<!--$('#myAssignmentForm').submit(function(e){-->
-<!--e.preventDefault();-->
-<!--$form=$(this);-->
-<!--$.post('@routes.UsersController.addAssignments',$(this).serialize(),function(data){-->
-<!--$('#successAssign').fadeIn(3000);-->
-<!--$('#myAssignmentForm')[0].reset();-->
-<!--});-->
+$('#awardForm').submit(function(e){
+e.preventDefault();
+$form=$(this);
+$.post('@routes.UsersController.addAwards',$(this).serialize(),function(data){
+$('#successAward').fadeIn(3000);
+$('#awardForm')[0].reset();
+});
 
 
-<!--});-->
-<!--});-->
-<!--</script>-->
+});
+});
+</script>
 
 
 }

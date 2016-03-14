@@ -35,6 +35,16 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
     )(LoginData.apply)(LoginData.unapply)
   )
 
+  val awardForm = Form(
+    mapping(
+      "name" -> nonEmptyText,
+      "details"->nonEmptyText,
+      "year"->number,
+      "sno"->number
+    )(repository.Awards.apply)(repository.Awards.unapply)
+  )
+
+
   val internForm = Form(
     mapping(
       "name" -> nonEmptyText,
@@ -85,7 +95,7 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
       if(user=="admin") {
         Ok(views.html.adminhomepage(internForm,assignmentForm))
       }else {
-        Ok(views.html.homepage(assignmentForm))
+        Ok(views.html.homepage(awardForm))
       }}.getOrElse{
        Unauthorized("Oops, you are not connected")
        }
@@ -108,7 +118,7 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
 */
   def renderuserHomepage= Action {
     implicit request=>
-      Ok(views.html.homepage(assignmentForm))
+      Ok(views.html.homepage(awardForm))
   }
 
 
@@ -198,6 +208,15 @@ class UsersController @Inject()(user:UserRepo,award:AwardRepo,language:LanguageR
       Ok(views.html.adminhomepage(internForm,assignmentForm))
     }
 
+  }
+
+  def addAwards=Action.async { implicit request =>
+
+    val awardRecord = awardForm.bindFromRequest.get
+    award.addAwards(awardRecord)
+    award.getAllAwards().map { data =>
+      Ok(views.html.homepage(awardForm))
+    }
   }
 
 

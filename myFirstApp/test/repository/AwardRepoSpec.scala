@@ -18,18 +18,18 @@ class AwardRepoSpec extends Specification{
     "Get all awards records test" in new WithApplication {
       val result = Await.result(awardRepo.getAllAwards(), 5 seconds)
       assert(result.length === 2)
-      assert(result === List(Awards(1,"akshay","Lan game First Prize",2016),Awards(2,"deepak","Coding First Prize",2016)))
+      assert(result === List(Awards("akshay","Lan game First Prize",2016,1),Awards("deepak","Coding First Prize",2016,2)))
     }
 
     "Add award test" in new WithApplication {
-      val result = Await.result(awardRepo.addAwards(Awards(3,"sangeeta","first division",2016)), 5 seconds)
+      val result = Await.result(awardRepo.addAwards(Awards("sangeeta","first division",2016,3)), 5 seconds)
       assert(result === 1)
     }
 
     "Get award record test" in new WithApplication {
       val result = Await.result(awardRepo.getUserAwards("akshay"), 5 seconds)
       assert(result.length === 1)
-      assert(result === List(Awards(1,"akshay","Lan game First Prize",2016)))
+      assert(result === List(Awards("akshay","Lan game First Prize",2016,1)))
     }
   }
 }
